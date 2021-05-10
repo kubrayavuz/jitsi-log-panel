@@ -7,6 +7,9 @@ def login_required(f):
         if session.get('username', None):
             return f(*args, **kwargs)
         else:
-            response = jsonify(message = 'Unauthorized user, please re-login to system.', status = 401)
+            response = jsonify(
+                message = 'Unauthorized user, please re-login to system.',
+                status = 401)
             return response
+
     return wrapped
