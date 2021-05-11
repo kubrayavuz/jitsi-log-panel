@@ -2,3 +2,5 @@ flask
 flask-restful
 requests
 schema
+flask-session
+redis
