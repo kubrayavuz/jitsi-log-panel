@@ -1,6 +1,7 @@
 from flask import (Flask, render_template, session, redirect)
 from flask_session import Session
 from app.api.admin import api_bp as admin_api_bp
+from app.api.script import api_bp as script_api_bp
 from config import SESSION_LIFETIME
 from datetime import timedelta
 
@@ -14,6 +15,7 @@ Session(app)
 app.permanent_session_lifetime = timedelta(seconds=SESSION_LIFETIME)
 
 app.register_blueprint(admin_api_bp)
+app.register_blueprint(script_api_bp)
 
 @app.route('/')
 def index():
