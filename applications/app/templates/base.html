@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Jitsi Log Panel</title>
+
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-cyan.min.css"/> 
+    <link type="text/css" rel="stylesheet" href="/static/css/style.css">
+
+    <script type="text/javascript" src="/static/js/material.js"></script>
+    <script type="text/javascript" src="/static/js/requests.js"></script>
+    <script type="text/javascript" src="/static/js/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+
+        <!-- NAVBAR -->
+        <header class="mdl-layout__header header">
+          <div class="mdl-layout__header-row">
+            <span class="mdl-layout-title">Home</span>
+            <div class="mdl-layout-spacer"></div>
+            <nav class="mdl-navigation">
+              <a class="mdl-navigation__link">
+                <i class="material-icons">power_settings_new</i>
+              </a>
+            </nav>
+          </div>
+        </header>
+
+        <!-- SIDEBAR -->
+        <div class="mdl-layout__drawer sidebar">
+          <span class="mdl-layout-title">
+            <img src="">
+          </span>
+          <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" v-for="menu in menuList">
+              <i class="material-icons" v-text="menu.iconClass"></i>
+              <span v-text="menu.name"></span>
+            </a>
+          </nav>
+        </div>
+
+        <main class="mdl-layout__content content">
+          {% include 'index.html' %}
+        </main>
+
+      </div>
+    </div>
+    <script src="/static/js/jquery-2.2.4.js"></script>
+    <script defer src="/static/js/gui.js"></script>
+  </body>
+</html>
