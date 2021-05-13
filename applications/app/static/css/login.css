@@ -1,0 +1,45 @@
+* {
+  font-family: 'Varela Round', sans-serif;
+}
+.mdl-grid {
+  height: 100vh;
+}
+.image-part {
+  display: flex;
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+}
+.image-part .mdl-card {
+  width: 430px;
+  margin: auto;
+  background-color: transparent;
+}
+.image-part .mdl-card img {
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+.content-part {
+  display: flex;
+}
+.content-part .mdl-card {
+  margin: auto;
+}
+.title {
+  color: #58585a;
+  font-size: 2em;
+  font-family: inherit;
+}
+.login-button-container {
+  padding: 8px 0;
+}
+.login-button-container button {
+  height: auto;
+  width: 100%;
+  margin-top: 15px;
+  color: white !important;
+  letter-spacing: 1px;
+  line-height: 50px;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: inherit;
+}
