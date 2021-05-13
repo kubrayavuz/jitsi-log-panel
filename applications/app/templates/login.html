@@ -20,7 +20,7 @@
     <div id="login-app" class="mdl-grid mdl-grid--no-spacing">
       <div class="mdl-cell mdl-cell--8-col mdl-cell--stretch image-part">
         <div class="mdl-card">
-            <img src="/static/img/jitsi-log.png">
+          <img src="/static/img/jitsi-log.png">
         </div>
       </div>
       <div class="mdl-cell mdl-cell--4-col mdl-cell--stretch content-part">
@@ -30,15 +30,21 @@
               <h2 class="mdl-card__title-text title">LOGIN</h2>
             </div>
             <div class="mdl-card__supporting-text">
-              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"><!-- for warning messages class must be binded(:class="is-invalid") -->
                 <input class="mdl-textfield__input" type="text" name="username" id="username">
                 <label class="mdl-textfield__label" for="username">Username</label>
-                <span class="mdl-textfield__error"></span>
+                <span class="mdl-textfield__error"></span><!-- warning messages will be added(v-text) -->
               </div>
-              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="password" name="password" id="password">
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"><!-- for warning messages class must be binded(:class="is-invalid") -->
+                <input class="mdl-textfield__input" :type="passwordType" name="password" id="password">
                 <label class="mdl-textfield__label" for="password">Password</label>
-                <span class="mdl-textfield__error"></span>
+                <span class="mdl-textfield__error"></span><!-- warning messages will be added(v-text) -->
+                <i class="material-icons password-icon"
+                   v-if="passwordType == 'password'"
+                   @click="showPassword">visibility</i>
+                <i class="material-icons password-icon"
+                   v-else
+                   @click="showPassword">visibility_off</i>
               </div>
               <div class="mdl-card__actions login-button-container">
                 <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Logın</button>
@@ -49,5 +55,6 @@
       </div>
     </div>
     <script src="/static/js/jquery-2.2.4.js"></script>
+    <script defer src="/static/js/login.js"></script>
   </body>
 </html>
