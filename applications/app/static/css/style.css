@@ -43,16 +43,21 @@
   padding-left: 0;
 }
 .sidebar .mdl-layout-title > img {
-  height: 65px;
-  margin: 0 23px;
+  height: 55px;
+  margin: 0 40px;
 }
 .sidebar nav {
   flex-grow: 1;
+  padding-top: 0 !important;
 }
 .sidebar nav a {
   color: #4d4d4d !important;
   cursor: pointer;
   font-weight: 600;
+}
+.sidebar nav a:hover {
+  color: #0074bf !important;
+  transition: 0.5s;
 }
 .sidebar nav a > i {
   margin-right: 25px;
