@@ -19,10 +19,10 @@ app.register_blueprint(script_api_bp)
 
 @app.route('/')
 def index():
-    if not session.get('user_id'):
+    if not session.get('username'):
         return redirect('/login')
     session.permanent = True
-    return render_template('index.html')
+    return render_template('base.html')
 
 
 @app.route('/login')
