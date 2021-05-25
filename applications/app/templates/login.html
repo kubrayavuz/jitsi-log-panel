@@ -29,15 +29,16 @@
             <h2 class="mdl-card__title-text title">LOGIN</h2>
           </div>
           <div class="mdl-card__supporting-text">
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"><!-- for warning messages class must be binded(:class="is-invalid") -->
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
+                :class="message ? 'is-invalid is-focused is-dirty' : ''">
               <input class="mdl-textfield__input" type="text" name="username" id="username" v-model="username">
               <label class="mdl-textfield__label" for="username">Username</label>
-              <span class="mdl-textfield__error"></span><!-- warning messages will be added(v-text) -->
             </div>
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"><!-- for warning messages class must be binded(:class="is-invalid") -->
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
+                 :class="message ? 'is-invalid is-focused is-dirty' : ''">
               <input class="mdl-textfield__input" :type="passwordType" name="password" id="password" v-model="password" v-model="password" @keyup.enter="loginOnClick">
               <label class="mdl-textfield__label" for="password">Password</label>
-              <span class="mdl-textfield__error"></span><!-- warning messages will be added(v-text) -->
+              <span class="mdl-textfield__error" v-text="message"></span>
               <i class="material-icons password-icon"
                  v-if="passwordType == 'password'"
                  @click="showPassword">visibility</i>

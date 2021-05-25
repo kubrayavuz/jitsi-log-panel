@@ -11,10 +11,12 @@ var app = new Vue({
   'data': {
     'username': '',
     'password': '',
-    'passwordType': 'password'
+    'passwordType': 'password',
+    'message': ''
   },
   'methods': {
     'loginOnClick': function () {
+      this.message = '';
       // data = JSON.stringify({'username': this.username, 'password': this.password});
       // resp = request('POST', '/api/auth', [['Content-Type', 'application/json']], data);
       fetch('/api/auth', {
@@ -28,7 +30,7 @@ var app = new Vue({
             window.location = '/';
           } else {
             console.log('ERROR', data)
-            alert('Kullanıcı adı ya da parola hatalı');
+            this.message = 'The username or password is incorrect';
           }
       });
     },
